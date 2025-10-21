@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海洋運動推展面海學校｜水域安全暨浮潛基本技術研習</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-text {
+            background: linear-gradient(45deg, #0074F9, #52D2F4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-gray-50" style="background-color: #F0F8FF;">
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-5xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-black text-[#0042ED] mb-4">專業升級！從課室到浪尖</h1>
+            <h2 class="text-2xl md:text-3xl font-bold gradient-text">成為面海教育的最強守護者！</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-gray-600">
+                臺灣是海洋之國，教育者需要的不僅是知識，更是一種能夠守護生命的專業自信。這場專為您設計的頂級訓練，將徹底掌握水域安全核心，解鎖探索海洋的浮潛技能。
+            </p>
+        </header>
+
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div class="border-b-2 md:border-b-0 md:border-r-2 border-gray-100 pb-4 md:pb-0 md:pr-6">
+                    <h3 class="text-lg font-bold text-gray-500 mb-1">研習總時數</h3>
+                    <p class="text-5xl font-black text-[#0074F9]">16</p>
+                    <p class="font-bold text-gray-700">小時專業蛻變</p>
+                </div>
+                <div class="border-b-2 md:border-b-0 md:border-r-2 border-gray-100 pb-4 md:pb-0 md:pr-6">
+                    <h3 class="text-lg font-bold text-gray-500 mb-1">兩大專業單位</h3>
+                    <p class="text-lg font-bold text-[#0074F9]">國立臺東大學體育學系</p>
+                    <p class="text-lg font-bold text-[#0074F9]">開放水域運動教育東區水域中心</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-gray-500 mb-1">雙重實戰場域</h3>
+                    <p class="text-lg font-bold text-[#0074F9]">大學泳池 & 開放水域活水湖</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+             <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-center text-[#0042ED] mb-4">⚓ 研習資訊：專業進化，即刻啟動！</h3>
+                 <div class="space-y-4 text-lg">
+                     <p><strong class="text-[#0074F9]">🗓️ 日期：</strong> 114年11月1日 (六) 至 11月2日 (日)</p>
+                     <p><strong class="text-[#0074F9]">🕗 時間：</strong> 每日 08:00－16:00</p>
+                     <p><strong class="text-[#0074F9]">📍 地點：</strong></p>
+                     <ul class="list-disc list-inside ml-4">
+                         <li><span class="font-bold">基礎訓練：</span> 國立臺東大學知本校區游泳池</li>
+                         <li><span class="font-bold">實戰驗證：</span> 臺東縣活水湖 (開放水域體驗)</li>
+                     </ul>
+                 </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg p-6">
+                <h3 class="text-2xl font-bold text-center text-[#0042ED] mb-4">💦 研習最大亮點：賦予您守護的力量</h3>
+                <p class="text-gray-600 mb-4 text-center">
+                    本課程設計旨在全面提升您的水域專業能力，從理論到實踐，讓您自信面對各種水域環境。
+                </p>
+                <div class="chart-container h-64 md:h-72">
+                    <canvas id="skillsDonutChart"></canvas>
+                </div>
+            </div>
+        </section>
+        
+        <section class="mb-12 bg-white rounded-2xl shadow-lg p-6 md:p-8">
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-[#0042ED] mb-2">您的專業能力轉變</h3>
+            <p class="text-gray-600 mb-6 text-center max-w-2xl mx-auto">
+                透過本次研習，您在水域風險評估、裝備操作、緊急應變與開放水域自信心等關鍵能力上將有顯著提升。
+            </p>
+            <div class="chart-container h-80 md:h-96 w-full max-w-4xl">
+                 <canvas id="progressRadarChart"></canvas>
+            </div>
+        </section>
+        
+        <section class="mb-12">
+            <h3 class="text-2xl md:text-3xl font-bold text-center text-[#0042ED] mb-6">兩日研習流程</h3>
+            <div class="relative pl-8 border-l-4 border-[#52D2F4]">
+                <div class="mb-8 relative">
+                    <div class="absolute w-8 h-8 bg-[#0074F9] rounded-full -left-12 border-4 border-white text-white flex items-center justify-center font-bold">1</div>
+                    <h4 class="text-xl font-bold text-[#0042ED]">第一天：基礎奠定 (大學游泳池)</h4>
+                    <p class="text-gray-600">上午：水域安全觀念與法規、自救與救生技巧理論。<br>下午：浮潛裝備認識與使用、靜態水域浮潛技巧實作。</p>
+                </div>
+                <div class="relative">
+                    <div class="absolute w-8 h-8 bg-[#0074F9] rounded-full -left-12 border-4 border-white text-white flex items-center justify-center font-bold">2</div>
+                    <h4 class="text-xl font-bold text-[#0042ED]">第二天：實戰應用 (臺東活水湖)</h4>
+                    <p class="text-gray-600">上午：開放水域環境評估、緊急應變情境模擬。<br>下午：綜合技能應用與考核、成果分享與證書頒發。</p>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="bg-gradient-to-br from-[#0074F9] to-[#0042ED] rounded-2xl shadow-lg p-6 md:p-8 text-white">
+            <h3 class="text-3xl font-bold text-center mb-4">🔗 報名行動與重要時程</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center">
+                    <p class="text-lg mb-4">席次有限，立即點燃您的熱情，預約您的藍海席次！</p>
+                    <a href="https://forms.gle/64xsNgojgNvfEjMG6" target="_blank" class="inline-block bg-white text-[#0074F9] font-bold py-3 px-8 rounded-full text-xl shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105">
+                        🔥 立即報名
+                    </a>
+                     <p class="mt-4 text-sm text-blue-100">📚 需研習時數者，請務必同步於「教師研習網」完成登錄。</p>
+                </div>
+                <div class="bg-white/20 rounded-xl p-6 text-center">
+                    <h4 class="text-lg font-bold mb-2">📄 同意書回傳截止</h4>
+                    <p class="text-sm mb-2">為確保您的保險權益，請務必準時回傳。</p>
+                    <div id="countdown" class="flex justify-center space-x-2 md:space-x-4 text-center">
+                        <div><span id="days" class="text-4xl font-black"></span><p class="text-xs">天</p></div>
+                        <div><span id="hours" class="text-4xl font-black"></span><p class="text-xs">時</p></div>
+                        <div><span id="minutes" class="text-4xl font-black"></span><p class="text-xs">分</p></div>
+                        <div><span id="seconds" class="text-4xl font-black"></span><p class="text-xs">秒</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="text-center p-8 text-gray-500">
+        <p>🌺 讓我們從課室的理論，勇敢地走向浪花。在水域中，我們學會自救，更學會守護他人的力量。</p>
+        <p class="mt-2 text-sm">&copy; 2025 海洋運動推展面海學校</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                  return label.join(' ');
+                                } else {
+                                  return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            };
+            
+            const wrapLabel = (label) => {
+                const maxLength = 16;
+                if (typeof label === 'string' && label.length > maxLength) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = '';
+                    words.forEach(word => {
+                        if ((currentLine + word).length > maxLength) {
+                            lines.push(currentLine.trim());
+                            currentLine = '';
+                        }
+                        currentLine += word + ' ';
+                    });
+                    lines.push(currentLine.trim());
+                    return lines;
+                }
+                return label;
+            };
+
+            const skillsDonutCtx = document.getElementById('skillsDonutChart').getContext('2d');
+            new Chart(skillsDonutCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['實作技能', '安全理論', '情境模擬'],
+                    datasets: [{
+                        label: '研習內容佔比',
+                        data: [50, 30, 20],
+                        backgroundColor: [
+                            '#0074F9',
+                            '#52D2F4',
+                            '#B7E9F4'
+                        ],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 14,
+                                    family: "'Noto Sans TC', sans-serif"
+                                }
+                            }
+                        },
+                        tooltip: tooltipTitleCallback.plugins.tooltip
+                    },
+                    cutout: '60%'
+                }
+            });
+
+            const progressRadarCtx = document.getElementById('progressRadarChart').getContext('2d');
+            const radarLabels = ['水域風險評估', '浮潛裝備操作', '緊急應變能力', '開放水域自信'];
+            new Chart(progressRadarCtx, {
+                type: 'radar',
+                data: {
+                    labels: radarLabels.map(wrapLabel),
+                    datasets: [
+                        {
+                            label: '研習前',
+                            data: [30, 40, 25, 20],
+                            backgroundColor: 'rgba(82, 210, 244, 0.2)',
+                            borderColor: '#52D2F4',
+                            pointBackgroundColor: '#52D2F4',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: '#52D2F4'
+                        },
+                        {
+                            label: '研習後',
+                            data: [85, 90, 80, 95],
+                            backgroundColor: 'rgba(0, 116, 249, 0.4)',
+                            borderColor: '#0074F9',
+                            pointBackgroundColor: '#0074F9',
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: '#0074F9'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                             labels: {
+                                font: {
+                                    size: 14,
+                                    family: "'Noto Sans TC', sans-serif"
+                                }
+                            }
+                        },
+                        tooltip: tooltipTitleCallback.plugins.tooltip
+                    },
+                    scales: {
+                        r: {
+                            angleLines: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            suggestedMin: 0,
+                            suggestedMax: 100,
+                             pointLabels: {
+                                font: {
+                                    size: 14,
+                                    family: "'Noto Sans TC', sans-serif",
+                                    weight: 'bold'
+                                },
+                                color: '#333'
+                            },
+                            grid: {
+                                color: 'rgba(0, 0, 0, 0.1)'
+                            },
+                            ticks: {
+                                backdropColor: 'rgba(255, 255, 255, 0.75)',
+                                color: '#666'
+                            }
+                        }
+                    }
+                }
+            });
+
+            const countdownDate = new Date("October 27, 2025 23:59:59").getTime();
+
+            const countdownFunction = setInterval(function() {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("days").innerText = days.toString().padStart(2, '0');
+                document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+                document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+                document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.getElementById("countdown").innerHTML = "<p class='text-xl font-bold'>報名已截止</p>";
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
